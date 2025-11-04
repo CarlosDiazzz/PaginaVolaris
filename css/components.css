@@ -1,0 +1,353 @@
+.slider{
+  width: 50vw;
+  height: calc(100vh - 100px);  
+  border-radius: 0;  
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.slides{
+  width:500%;
+  height:100%;
+  display:flex;
+}
+
+.slides input{
+  display:none;
+}
+
+.slide{
+  width:20%;
+  transition:0.8s;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.manual{
+  position:absolute;
+  width:100%;
+  bottom:14px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+.manual-btn{
+  border:2px solid rgba(255,255,255,0.15);
+  padding:2px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+}
+.manual-btn:hover{
+  background:white;
+}
+
+#slide1:checked ~ .first{margin-left:0}
+#slide2:checked ~ .first{margin-left:-20%}
+#slide3:checked ~ .first{margin-left:-40%}
+
+.flechas {
+  position: absolute;
+  bottom: 8px;
+  right: 55px;
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.flecha {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s;
+}
+
+.flecha:hover {
+  background: #f0f0f0;
+  color: #444;
+}
+
+
+/* Visibilidad de flechas según slide activo */
+#slide1:checked ~ .flechas .izq{display:none}
+#slide1:checked ~ .flechas .der{display:none}
+
+#slide2:checked ~ .flechas .izq2{display:none}
+#slide2:checked ~ .flechas .der2{display:none}
+
+#slide3:checked ~ .flechas .izq3{display:none}
+#slide3:checked ~ .flechas .der3{display:none}
+
+#slide1:checked ~ .manual label:nth-child(1) {
+  background: white;
+}
+#slide2:checked ~ .manual label:nth-child(2) {
+  background: white;
+}
+#slide3:checked ~ .manual label:nth-child(3) {
+  background: white;
+}
+
+.destino-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.destino-imagen {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.destino-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagen-contador {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.destino-info {
+  padding: 12px; /* Reducir padding */
+  text-align: right;
+}
+
+.destino-info h3 {
+  font-size: 14px; 
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.3;
+  text-align: left; /* AGREGAR ESTA LÍNEA */
+}
+
+.destino-info .fecha {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.destino-info .precio {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 0px;
+}
+
+.destino-info .precio-cantidad {
+  margin-bottom: 0px;
+  text-align: right;
+  margin-top: 0px;
+}
+.destino-info .precio-cantidad strong {
+  font-size: 16px; /* Precio más pequeño */
+  color: #A12885;
+  font-weight: 600;
+}
+
+.destino-info .precio strong {
+  font-size: 18px;
+  color: #9b2ba6;
+  font-weight: 600;
+}
+.destino-info .detalles {
+  font-size: 11px; /* Texto más pequeño */
+  color: #888;
+  line-height: 1.4;
+  margin-bottom: 25px; /* Menos margen */
+  margin-top: 2px;
+}
+.reserva-btn {
+  background: #A12885;
+  border: none;
+  padding: 8px 16px; /* Botón más pequeño */
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+  color: white;
+}
+
+
+.reserva-btn:hover {
+  background: #7d2287;
+}
+
+.destino-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+.destino-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 245px;
+  flex-shrink: 0;
+  display: none; /* Ocultar por defecto */
+}
+
+.destino-card.visible {
+  display: block; /* Mostrar solo las visibles */
+}
+.destino-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.card-beneficio {
+  background: #fff;
+  border-radius: 16px;               
+  padding: 25px 15px; 
+  height: 320px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: .3s ease;
+    align-items: center; 
+}
+
+.card-beneficio:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.card-beneficio img {
+  width: 100px; 
+  height: 100px;
+  margin: 0 auto 12px auto;
+  object-fit: contain; /* AGREGAR ESTA LÍNEA */
+}
+.img-vpass {
+  width: 200px !important;
+  height: 100px !important;
+}
+.card-beneficio h3 {
+  font-size: 20px; 
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #202020;
+}
+
+.card-beneficio p {
+  font-size: 13px; 
+  color: #555;
+  line-height: 1.3;
+  padding: 0;
+  margin-bottom: 15px;
+  flex-grow: 1; 
+}
+
+.btn-card {
+  display: inline-block;
+  background: #A12885;
+  color: #fff;
+  padding: 10px 20px; 
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.card-servicio {
+  background: #fff;
+  border-radius: 16px;
+    min-height: 200px !important; /* Reducida de 280px a 200px */
+    padding: 20px 15px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: .3s ease;
+}
+
+.card-servicio:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.icono-servicio {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px; /* Reducido para acercar al título */
+}
+
+.icono-servicio img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.card-servicio h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px !important;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.card-servicio p {
+  color: #666;
+  font-size: 12px !important; 
+  line-height: 1.3 !important;
+}
+
+/* Hover: cambiar imagen y título a morado */
+.card-servicio:hover h3 {
+  color: #9b2ba6;
+}
+
+.card-servicio:hover .icono-servicio img[src*="yavas.svg"] {
+  content: url('imagenes/yavas-morado.svg');
+}
+
+.card-servicio:hover .icono-servicio img[src*="business.svg"] {
+  content: url('imagenes/business-morado.svg');
+}
+
+.card-servicio:hover .icono-servicio img[src*="grupos.svg"] {
+  content: url('imagenes/grupos-morado.svg');
+}
+
+.card-servicio:hover .icono-servicio img[src*="beneficios.svg"] {
+  content: url('imagenes/beneficios-morado.svg');
+}
+
+.card-servicio:hover .icono-servicio img[src*="carga.svg"] {
+  content: url('imagenes/carga-morado.svg');
+}

@@ -1,0 +1,773 @@
+.principal{
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+  gap:60px;  
+  padding:0px 0px 20px 0px;
+  margin-top: 0;
+}
+
+/* SECCIÓN MEJORES VUELOS */
+.mejores-vuelos {
+  max-width: 1400px;
+  margin: -20px auto 60px auto;
+  padding: 10px 60px;
+  background: #F0F0F0;
+  border-top: 3px solid #e4efe9;
+  position: relative; 
+  z-index: 1; 
+  margin-bottom: 20px;
+}
+.mejores-vuelos h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  margin-left: 25px; 
+}
+/* AGREGAR ESTO: */
+.mejores-vuelos .subtitulo {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding-left: 30px;   
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filtro-grupo {
+  display: flex;
+  gap: 15px;
+  padding-left: 20px;
+}
+
+.filtro-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s;
+}
+
+.filtro-btn:first-child {
+  color: #A12885;
+}
+
+.filtro-btn:hover {
+  border-color: #A12885;
+  color: #A12885;
+}
+
+.filtro-btn i {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.filtro-reiniciar {
+  background: transparent;
+  border: none;
+  color: #A12885;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filtro-ordenar {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #A12885;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filtro-ordenar:hover {
+  border-color: #A12885;
+}
+
+.destinos-container {
+  position: relative;
+  width: 1000px; /* Contenedor fijo para 4 tarjetas */
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 80px; /* Espacio para las flechas */
+}
+
+.destinos-grid {
+  display: grid; /* CAMBIO CLAVE: de flex a grid */
+  grid-template-columns: repeat(4, 245px); /* 4 columnas fijas de 245px */
+  gap: 20px;
+  justify-content: center; /* Centrar las tarjetas */
+}
+
+.flecha-destinos {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 2px solid #9b2ba6;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #A12885;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.flecha-izq {
+  left: 0; /* Fuera del contenedor principal */
+}
+
+.flecha-der {
+  right: 0; /* Fuera del contenedor principal */
+}
+
+.flecha-destinos:hover {
+  background: #A12885;
+  color: white;
+}
+
+
+/* Indicadores de página */
+.paginas-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagina-punto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagina-punto.activo {
+  background: #A12885;
+  width: 8px;
+  height: 8px;
+}
+
+.pagina-punto:hover {
+  background: #A12885;
+}
+
+/* SECCIÓN PAGO SEGURO */
+.pago-seguro {
+  background: #F0F0F0;
+    padding: 0px 90px;  
+     margin-top: -30px; 
+}
+
+.pago-seguro h2 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 40px;
+  margin-left: 0px; 
+}
+
+.metodos-pago {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 30px;
+}
+
+.metodo-grupo h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.metodo-grupo .logos {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.metodo-grupo .logos img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.pago-seguro .ver-mas {
+  color: #9b2ba6;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.pago-seguro .ver-mas:hover {
+  text-decoration: underline;
+}
+.pago-box {
+  background: white;
+  max-width: 1000px;
+  margin-left: 0;   
+  padding: 30px 50px; /* Cambiar de 0px a 30px el primer valor */
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+.pago-box .ver-mas {
+  display: inline-block;
+  margin-top: 20px;
+}
+.programas-beneficios {
+  background: #F0F0F0;
+  padding: 40px 90px;
+}
+
+.cards-beneficios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px; 
+  max-width: 1100px;
+  margin: 0;
+}
+
+/* SECCIÓN SERVICIOS ADICIONALES */
+.servicios-adicionales {
+  background: #F0F0F0;
+  padding: 20px 90px 60px 90px;
+  margin-bottom: -40px;
+  position: relative;
+}
+
+.cards-servicios {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0;
+}
+
+/* PIE DE PÁGINA NEGRO */
+.footer {
+  background: #000;
+  margin-top: 0;
+}
+
+.suscripcion {
+  max-width: 1100px;
+  margin: -30px auto 0 auto;
+  position: relative;
+  z-index: 10;
+  padding: 0 90px;
+}
+/* CAJA MÁS DELGADA Y CONTENIDO CENTRADO */
+.suscripcion-contenedor {
+  background: white;
+  border-radius: 16px;
+  padding:20px 190px;
+  min-height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.suscripcion-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+  text-align: right;
+}
+
+.suscripcion-texto .linea1 {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.suscripcion-texto .linea2 {
+  font-size: 27px;
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.suscripcion-form {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  padding: 0;
+  overflow: hidden;
+  min-width: 350px;
+  margin-right: 20px;
+
+}
+
+.suscripcion-input {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.suscripcion-input::placeholder {
+  color: #999;
+}
+
+.suscripcion-btn {
+  background: #A12885;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.suscripcion-btn:hover {
+  background: #7d2287;
+}
+/* FOOTER ENLACES */
+.footer-enlaces {
+  background: #000;
+  padding: 50px 90px;
+  color: #ccc;
+}
+
+.footer-columnas {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 1.4fr 0.3fr 0.5fr; 
+  gap: 60px;  
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.footer-columna h4 {
+  font-size: 14px;        
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.footer-columna p {
+  color: #ccc;
+  font-size: 11px;       
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+.footer-columna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-columna li {
+  margin-bottom: 6px;     
+}
+.footer-columna a {
+  color: #ccc;
+  font-size: 11px;        
+  text-decoration: none;
+  transition: .3s ease;
+}
+
+.footer-columna a:hover {
+  color: #A12885;
+}
+
+.ver-todo {
+  color: #A12885 !important;
+  font-weight: 500;
+}
+
+/* BOTONES DESCARGAR APP */
+.descarga-app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.apps-container {
+  display: flex;
+  gap: 10px;       /* antes 20px */
+  margin: 10px 0 15px 0;
+}
+
+.app-btn {
+  height: 45px;     /* antes 60px */
+  cursor: pointer;
+  transition: 0.3s;
+}
+.app-btn:hover {
+  transform: scale(1.05);
+}
+.footer-columna {
+  margin-bottom: 15px;
+}
+
+.app-btn span {
+  display: block;
+  font-size: 10px;
+  color: #ccc;
+}
+
+.app-btn strong {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  background:none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.08);
+}
+
+.icon {
+  width: 40px; /* tamaño del logo dentro del círculo */
+  height: 40px;
+}
+
+/* FOOTER ENLACES - TODO EN UNO */
+.footer-enlaces {
+  background: #000;
+  padding: 50px 90px;
+  color: #ccc;
+}
+
+.footer-links-top {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* coincide con las columnas arriba */
+  max-width: 1100px;
+  margin: 20px auto 10px auto;
+  padding-left: 90px; /* opcional para alinearlo igual que las columnas */
+}
+
+.footer-links-bottom a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  font-size: 24px;
+  color: #333;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.nav-menu-mobile,
+.nav-second-right-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-menu-mobile a,
+.nav-second-right-mobile a {
+  text-decoration: none;
+  color: #4b4b4b;
+  font-size: 15px;
+}
+
+/* Asegurar que cada uno caiga EXACTO en su columna */
+.footer-links-top a:nth-child(1) {
+  margin-left: -90px;
+}
+.footer-links-top a:nth-child(2) {
+  margin-left: -60px;
+}
+
+.footer-links-top a:nth-child(3) {
+  margin-left: -60px;
+}
+
+
+.footer-bottom-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.footer-bottom-line p {
+  color: #aaa;
+  margin: 0;
+  font-size: 12px;
+}
+
+.footer-enlaces-legales {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-enlaces-legales a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.footer-enlaces-legales a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .nav {
+    padding: 15px 30px;
+  }
+  .nav-second {
+    padding: 8px 30px;
+  }
+  .principal {
+    gap: 30px;
+  }
+  .buscador {
+    margin: 20px auto 40px 20px;
+  }
+  .mejores-vuelos {
+    padding: 10px 30px;
+  }
+  .destinos-container {
+    width: 100%;
+    padding: 0 40px;
+  }
+  .destinos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .pago-seguro,
+  .programas-beneficios,
+  .servicios-adicionales,
+  .suscripcion,
+  .footer-enlaces {
+    padding: 40px 30px;
+  }
+  .suscripcion-contenedor {
+    padding: 20px 30px;
+  }
+  .footer-columnas {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header-fijo {
+    position: relative;
+  }
+  body {
+    padding-top: 0;
+  }
+  .nav-right {
+    display: none;
+  }
+  .nav-second {
+    display: none;
+  }
+  .principal {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  .buscador {
+    margin: 0;
+    max-width: 100%;
+    padding: 20px;
+  }
+  .slider {
+    width: 100%;
+    height: 300px;
+  }
+  .formulario {
+    grid-template-columns: 1fr;
+  }
+  .swap {
+    display: none;
+  }
+  .botones {
+    grid-template-columns: 1fr;
+  }
+  .mejores-vuelos h2 {
+    font-size: 28px;
+  }
+  .filtros {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filtro-grupo {
+    justify-content: center;
+  }
+  .destinos-container {
+    padding: 0;
+  }
+  .flecha-destinos {
+    top: auto;
+    bottom: -50px;
+    transform: translateY(0);
+  }
+  .flecha-izq {
+    left: 20px;
+  }
+  .flecha-der {
+    right: 20px;
+  }
+  .pago-seguro h2 {
+    font-size: 28px;
+  }
+  .metodos-pago {
+    grid-template-columns: 1fr;
+  }
+  .cards-beneficios {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .cards-servicios {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .suscripcion-contenedor {
+    flex-direction: column;
+    text-align: center;
+  }
+  .suscripcion-texto {
+    text-align: center;
+  }
+  .suscripcion-form {
+    width: 100%;
+    max-width: 350px;
+  }
+  .footer-columnas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-links-top {
+    display: none;
+  }
+  .footer-bottom-line {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 45px;
+  }
+  .campo-grande,
+  .campo-mediano {
+    min-height: 60px;
+  }
+  .campo-grande input {
+    font-size: 16px;
+  }
+  .mejores-vuelos {
+    padding: 10px 20px;
+  }
+  .pago-seguro,
+  .programas-beneficios,
+  .servicios-adicionales,
+  .suscripcion,
+  .footer-enlaces {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav {
+    padding: 15px;
+  }
+  .buscador {
+    padding: 15px;
+  }
+  .tabs button {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  .campo-grande,
+  .campo-mediano {
+    padding: 10px;
+  }
+  .mejores-vuelos h2 {
+    font-size: 24px;
+  }
+  .filtro-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+  .pago-seguro h2 {
+    font-size: 24px;
+  }
+  .suscripcion-texto .linea2 {
+    font-size: 22px;
+  }
+  .footer-columnas {
+    grid-template-columns: 1fr;
+    color: white
+  }
+}
